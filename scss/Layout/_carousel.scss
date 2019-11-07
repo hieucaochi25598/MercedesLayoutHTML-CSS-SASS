@@ -1,0 +1,81 @@
+.carousel__content__item{
+    
+    img{
+        width: 100%;
+        display: block;
+    }
+    .carousel__content__item__slider{
+        @include styleText($fs-5, $fw-bold-0, $color-white-0);
+        position: relative;
+        .carousel__caption{
+            position: absolute;
+            top: 0%;
+            left: 8%;
+            opacity: 0;
+            transition: all 2s;
+            h2::before{
+                // content: '';
+                // display: block;
+                // height: 3px;
+                // background: $color-white-0;
+                // width: 65px;
+                // margin-bottom: $mg-2;
+                @include h2Before(3px, 65px, $color-white-0, $mg-2);
+            }
+            .root::before{
+                @include h2Before(3px, 65px, $color-black-1, $mg-2);
+            }
+            p{
+                @include styleText($fs-6, $fw-normal, $color-white-0);
+                margin-top: $mg-2 * 11;
+            }
+        }
+    }
+}
+
+@include respond-to('my-breakpoint'){
+    .carousel__caption{
+        p{
+            margin-top: 150px !important;
+        }
+    }
+}
+@include respond-to('large'){
+    .carousel__caption{
+        h2{
+            @include styleText($fs-3, $fw-bold-0, $color-white-0);
+        }
+        left: 15% !important;
+        p{
+            margin-top: 40px !important;
+        }
+
+    }
+}
+@include respond-to('medium'){
+    .carousel__content{
+        .slick-prev,.slick-next{
+            display: none !important;
+        }
+        .carousel__caption{
+            text-align: center;
+            position: unset !important;
+            h2{
+                position: relative;
+                @include styleText($fs-3, $fw-bold-0, $color-black-1);
+                &:before{
+                    position: absolute;
+                    left: 50%;
+                    top: -50%;
+                    transform: translateX(-50%);
+                    @include h2Before(3px, 20% !important, $color-black-1 !important, $mg-2);
+                }
+            }
+            p{
+                @include styleText($fs-6, $fw-normal, $color-black-1 !important);
+                padding-bottom: $pd-1 * 6;
+            }
+        }
+    }
+    
+}

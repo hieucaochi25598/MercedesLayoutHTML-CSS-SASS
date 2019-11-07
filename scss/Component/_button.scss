@@ -1,0 +1,43 @@
+.mer-btn{
+    @include styleButton($color-black-1, $color-black-1, $pd-1 - 2, $pd-2, $color-grey-0);
+    
+    &:hover{
+        @include styleButtonHover($color-black-2, $color-white-0, $color-black-2);
+    }
+    &:focus{
+        box-shadow: none;
+        outline: none;
+    }
+}
+.btn-bring{
+    margin-top: $mg-2;
+    margin-bottom: $mg-2 * 5;
+    border-radius: unset;
+    &:focus{
+        box-shadow: none;
+        outline: none;
+    }
+}
+.my-btn{
+    background-color: #000000;
+}
+.my-btn1{
+    background: linear-gradient(to bottom, #1e1e1e, #101010);
+    border-radius: unset;
+    border: none;
+    outline: none;
+    padding: 0 60px;
+    span{
+        @include styleText($fs-1, $fw-normal,#999);
+        transition: all 0.5s;
+    }
+    &:hover{
+        span{
+            @include styleText($fs-1, $fw-normal, $color-blue);
+        }
+    }
+    &:focus{
+        box-shadow: none;
+        outline: none;
+    }
+}

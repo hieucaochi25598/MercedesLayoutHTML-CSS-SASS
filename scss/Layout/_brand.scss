@@ -1,0 +1,17 @@
+.brand{
+    background-color: #000000;
+    padding-bottom: 80px;
+    .brand__content{
+        width: 95%;
+        margin: 0 auto;
+        border-top: 1px solid #191919;
+        padding-top: 30px;
+        img{
+            width: 100%;
+            display: block;
+        }
+        .brand__img{
+            padding: 0 140px;
+        }
+    }
+}

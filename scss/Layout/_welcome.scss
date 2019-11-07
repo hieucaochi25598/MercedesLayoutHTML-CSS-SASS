@@ -1,0 +1,70 @@
+
+.mercedes-welcome{
+    background-color: $color-black-0;
+    padding-top: $pd-2 * 6;
+    padding-bottom: $pd-2 *8;
+    .welcome__content
+    {
+        width: 84%;
+        margin: 0 auto;
+        .welcome__content__text{
+            h2{
+                @include styleText($fs-8, $fw-normal, $color-white-0);
+                &::before{
+                    @include h2Before(3px, 65px, $color-white-0, $mg-1);
+                }   
+            }
+            p
+            {
+                @include styleText($fs-0, $fw-normal, $color-white-0);
+                margin-right: 40%;
+            }
+        }
+        .welcome__logo{
+            .my-welcome-col{
+                padding: 0 $pd-1 - 2.5 !important;
+                .welcome__logo__img{
+                    position: relative;
+                    .hover-change{
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                        opacity: 0;
+                        height: 0;
+                        background-color: $color-blue;
+                        transition: all 0.2s;
+                    }
+                    &:hover{
+                        .hover-change{
+                            height: 8px;
+                            opacity: 1;
+                        }
+                    }
+                    a{
+                        img{
+                            display: block;
+                            width: 100%;
+                        }
+                    } 
+                }
+
+            }
+        }
+    }
+}
+
+//Responsive
+@include respond-to('medium')
+{
+    .welcome__content__text{
+        .btn-bring{
+            width: 100%;
+        }
+    }
+    .welcome__logo__img{
+        padding-bottom: $pd-1 + 5;
+        .hover-change{
+            bottom: 8% !important;
+        }
+    }
+}

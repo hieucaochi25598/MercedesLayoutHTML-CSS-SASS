@@ -1,0 +1,48 @@
+.inform{
+    padding-bottom: 30px;
+    background-color: #000000;
+    @include styleText($fs-1, $fw-normal, #999);
+    .inform__content{
+        width: 95%;
+        margin: 0 auto;
+        h2{
+            padding-bottom: $pd-1 * 3;
+            @include styleText($fs-8, $fw-bold-0, $color-white-0);
+            border-bottom: 1px solid #191919;
+            &::before{
+                @include h2Before(1px, 65px, $color-white-0, $mg-2);
+            }
+        }
+        input{
+            padding: 20px;
+            border-radius: unset;
+            outline: none;
+            border: 1px solid #2A2A2A;
+            box-shadow: none;
+            background: #2A2A2A;
+            @include styleText($fs-2, $fw-normal, $color-white-0);
+        }
+        .form-group{
+            padding-right: $pd-2 * 5;
+            .form-check
+            {
+                .form-check-input{
+                height: 16px;
+                    width: 16px;
+                }
+            }
+            a{
+                @include styleText($fs-1, $fw-normal, #999);
+                &:hover{
+                    @include styleText($fs-1, $fw-normal, $color-blue);
+                }
+            }
+        }
+        .inform__content__item__right{
+            i{
+                @include styleText($fs-3, $fw-normal, #999);
+                margin-right: $mg-2 * 2;
+            }
+        }
+    }
+}

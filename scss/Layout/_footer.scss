@@ -1,0 +1,25 @@
+.footer{
+    @include styleText($fs-1, $fw-normal, #999); 
+    background-color: #000000;
+    .footer__content{
+        width: 95%;
+        margin: 0 auto;
+        ul{
+            list-style-type: none;
+            display: flex;
+            justify-content: flex-end;
+            li{
+                margin: 0 10px;
+                a{
+                    @include styleText($fs-1, $fw-normal, #999);
+                    text-decoration: none;
+                    transition: all 0.5s;
+                    &:hover{
+                        @include styleText($fs-1, $fw-normal, $color-blue);
+
+                    }
+                }
+            }
+        }
+    }
+}

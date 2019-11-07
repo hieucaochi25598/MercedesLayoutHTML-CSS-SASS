@@ -1,0 +1,43 @@
+.slick-prev{
+    left: 70px;
+    z-index: 10;   
+    &::before{
+        @include stylebeforeSlick($ff-0, $fw-bold, $fs-5);
+        content: "\f053";
+        opacity: 1;
+        transition: all 0.7s;
+    }
+    &:hover::before{
+       opacity: 0.7;
+    }
+    &:active::before{
+        color: $color-blue;
+        opacity: 1;
+    }
+}
+.slick-next{
+    right: 70px;
+    z-index: 10;
+    &::before{
+        @include stylebeforeSlick($ff-0, $fw-bold, $fs-5);
+        content: "\f054";
+        opacity: 1;
+        transition: all 0.7s;
+    }
+    &:hover::before{
+    opacity: 0.7;
+    }
+    &:active::before{
+        color: $color-blue;
+        opacity: 1;
+    }
+}
+.slick-active
+{
+    .carousel__content__item__slider{
+        .carousel__caption{
+            transform: translateY(50px);
+            opacity: 1 !important;
+        }
+    }
+}

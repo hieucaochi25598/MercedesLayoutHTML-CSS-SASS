@@ -1,0 +1,99 @@
+
+.mercedes-header{
+    background-color: $color-black-0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    transition: top 0.5s;
+    overflow: hidden;
+    .mercedes-header__content{
+        width: 92%;
+        margin: 0 auto;
+        .header__content__provider{
+            ul{
+                list-style-type: none;
+                li{
+                    padding: $pd-0 0;
+                    margin: 0 $mg-1;
+                    a{
+                        @include styleText($fs-0, $fw-normal, $color-white-0);
+                        text-decoration: none;
+                        &:hover
+                        {
+                            @include styleText($fs-0, $fw-normal, $color-blue);
+                            i{
+                                @include iconHeader($color-blue, 18px, 18px,18px);
+                                @include styleText($fs-7, $fw-bold, $color-blue);
+                            }
+                        }
+                        i{
+                            @include iconHeader($color-white-0, 18px, 18px, 18px);
+                        }
+                    }
+                }
+            }
+        }
+        .navbar{ 
+            
+            .navbar-nav{
+                .nav-item{
+                    margin-left: $mg-2;
+                    padding-top: $pd-1;
+                    &:hover{
+                        .nav-link{
+                            @include styleText($fs-6, $fw-normal, $color-blue);
+                        }
+                    }
+                    .nav-link{
+                         @include styleText($fs-6, $fw-normal, $color-white-0);
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Responsive
+
+@include respond-to('large'){
+    .navbar{
+        .navbar-nav{
+            .nav-item{
+                .nav-link{
+                    @include styleText($fs-3 !important, $fw-normal !important, $color-white-0 !important); 
+                }
+                &:hover{
+                    .nav-link{
+                        @include styleText($fs-3 !important, $fw-normal !important, $color-blue !important); 
+                    }
+                }
+            }
+        }
+        text-align: center;
+        .navbar-brand{
+            img{
+                width: 60px;
+                height: 60px;
+            }
+            img:nth-child(2){
+                width: 100px;
+                height: 100px;
+            }
+        }
+    }
+}
+@include respond-to('medium'){
+    .header__content__provider{
+        ul{
+            li{
+                span{
+                    display: none;
+                }
+            }
+            li:nth-child(2){
+                display: none;
+            }
+        }
+    }
+}
